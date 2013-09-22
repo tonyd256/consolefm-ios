@@ -1,0 +1,7 @@
+platform :ios, '7.0'
+
+pod 'AFNetworking', '~> 2.0.0-RC3'
+
+target 'Console.fmTests', :exclusive => true do
+    pod 'Kiwi', '~> 2.2.1'
+end
