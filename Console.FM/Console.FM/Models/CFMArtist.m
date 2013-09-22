@@ -28,7 +28,7 @@
         [genres addObject:[[CFMGenre alloc] initWithJSON:genre]];
     }
 
-    _genres = [genres mutableCopy];
+    _genres = [genres copy];
 
     return self;
 }

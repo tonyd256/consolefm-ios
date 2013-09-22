@@ -34,7 +34,7 @@
         [artists addObject:[[CFMArtist alloc] initWithJSON:artist]];
     }
 
-    _artists = [artists mutableCopy];
+    _artists = [artists copy];
 
     return self;
 }
