@@ -15,7 +15,7 @@ describe(@"CFMAPIClient", ^{
         __block NSArray *returnedGenres;
 
         it(@"should return a list of genres from the api", ^{
-            [CFMAPIClient stubRequestWithPath:@"genres" andHTTPMethod:@"GET"];
+            [CFMAPIClient stubRequestPath:@"genres" method:@"GET" filename:@"genres"];
             [[CFMAPIClient sharedClient] fetchGenresWithCompletion:^(NSError *error, NSArray *genres) {
                 returnedGenres = genres;
             }];
@@ -28,7 +28,7 @@ describe(@"CFMAPIClient", ^{
         __block NSArray *returnedTracks;
 
         it(@"should return a list of tracks for a given genre from the api", ^{
-            [CFMAPIClient stubRequestWithPath:@"genres/1/tracks" andHTTPMethod:@"GET"];
+            [CFMAPIClient stubRequestPath:@"genres/1/tracks" method:@"GET" filename:@"tracks"];
             [[CFMAPIClient sharedClient] fetchTracksForGenre:@"1" complete:^(NSError *error, NSArray *tracks) {
                 returnedTracks = tracks;
             }];

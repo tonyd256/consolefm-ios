@@ -10,7 +10,7 @@
 
 @interface CFMAPIClient (StubExtentions)
 
-+ (void)stubRequestWithPath:(NSString *)path andHTTPMethod:(NSString *)method;
++ (void)stubRequestPath:(NSString *)path method:(NSString *)method filename:(NSString *)filename;
 + (void)removeLastRequestHandler;
 
 @end

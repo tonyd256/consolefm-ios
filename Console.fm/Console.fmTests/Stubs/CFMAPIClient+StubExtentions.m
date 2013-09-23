@@ -11,12 +11,16 @@
 
 @implementation CFMAPIClient (StubExtentions)
 
-+ (void)stubRequestWithPath:(NSString *)path andHTTPMethod:(NSString *)method
++ (void)stubRequestPath:(NSString *)path method:(NSString *)method filename:(NSString *)filename
 {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.HTTPMethod isEqualToString:method] && [request.URL.path rangeOfString:path].location != NSNotFound;
+        if ([request.HTTPMethod isEqualToString:method] && [request.URL.path rangeOfString:path].location != NSNotFound) {
+            return YES;
+        } else {
+            return NO;
+        }
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFile:[NSString stringWithFormat:@"%@.json", path] contentType:@"text/json" responseTime:OHHTTPStubsDownloadSpeedWifi];
+        return [OHHTTPStubsResponse responseWithFile:[NSString stringWithFormat:@"%@.json", filename] contentType:@"text/json" responseTime:OHHTTPStubsDownloadSpeedWifi];
     }];
 }
 

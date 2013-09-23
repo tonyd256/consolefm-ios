@@ -128,7 +128,7 @@
 		EA6AA05F17F0071B00E469D1 /* CFMObject+JSONFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CFMObject+JSONFixture.m"; path = "Console.fmTests/Fixtures/CFMObject+JSONFixture.m"; sourceTree = SOURCE_ROOT; };
 		EA6AA06517F00C0900E469D1 /* CFMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMAPIClient.h; sourceTree = "<group>"; };
 		EA6AA06617F00C0900E469D1 /* CFMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMAPIClient.m; sourceTree = "<group>"; };
-		EA6AA06917F00C3600E469D1 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMAPIClientSpec.m; sourceTree = "<group>"; };
+		EA6AA06917F00C3600E469D1 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = ../Tests/Helpers/CFMAPIClientSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +228,6 @@
 		EA54FCC017ECC09B0023FEE0 /* Console.fmTests */ = {
 			isa = PBXGroup;
 			children = (
-				EA6AA06817F00C3600E469D1 /* Helpers */,
 				EA6AA05017EFA1ED00E469D1 /* JSON */,
 				EA6AA04C17EF9D8A00E469D1 /* Stubs */,
 				EA54FCF917ECE9090023FEE0 /* Fixtures */,
@@ -281,6 +280,7 @@
 		EA54FCEF17ECE3600023FEE0 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EA6AA06817F00C3600E469D1 /* Helpers */,
 				EA54FCF017ECE3680023FEE0 /* Models */,
 			);
 			name = Tests;
