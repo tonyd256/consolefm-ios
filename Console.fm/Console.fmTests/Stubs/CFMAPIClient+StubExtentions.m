@@ -14,11 +14,7 @@
 + (void)stubRequestPath:(NSString *)path method:(NSString *)method filename:(NSString *)filename
 {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        if ([request.HTTPMethod isEqualToString:method] && [request.URL.path rangeOfString:path].location != NSNotFound) {
-            return YES;
-        } else {
-            return NO;
-        }
+        return [request.HTTPMethod isEqualToString:method] && [request.URL.path rangeOfString:path].location != NSNotFound;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
         return [OHHTTPStubsResponse responseWithFile:[NSString stringWithFormat:@"%@.json", filename] contentType:@"text/json" responseTime:OHHTTPStubsDownloadSpeedWifi];
     }];

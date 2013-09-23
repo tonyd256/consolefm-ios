@@ -50,8 +50,9 @@
 		EA6AA06217F0072B00E469D1 /* CFMTrack+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0D17ED07B40023FEE0 /* CFMTrack+JSONFixture.m */; };
 		EA6AA06317F0072E00E469D1 /* CFMArtist+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0417ECF6CB0023FEE0 /* CFMArtist+JSONFixture.m */; };
 		EA6AA06717F00C0900E469D1 /* CFMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06617F00C0900E469D1 /* CFMAPIClient.m */; };
-		EA6AA06B17F00C4600E469D1 /* CFMAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06917F00C3600E469D1 /* CFMAPIClientSpec.m */; };
 		EA6AA06E17F0C00800E469D1 /* CFMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */; };
+		EA6AA07017F0DF4000E469D1 /* private.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6AA06F17F0DF4000E469D1 /* private.plist */; };
+		EAA7BAF917F0E2310042B9D6 /* CFMAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */; };
 		EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0717ED04B90023FEE0 /* CFMTrackSpec.m */; };
 /* End PBXBuildFile section */
 
@@ -129,9 +130,10 @@
 		EA6AA05F17F0071B00E469D1 /* CFMObject+JSONFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CFMObject+JSONFixture.m"; path = "Console.fmTests/Fixtures/CFMObject+JSONFixture.m"; sourceTree = SOURCE_ROOT; };
 		EA6AA06517F00C0900E469D1 /* CFMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMAPIClient.h; sourceTree = "<group>"; };
 		EA6AA06617F00C0900E469D1 /* CFMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMAPIClient.m; sourceTree = "<group>"; };
-		EA6AA06917F00C3600E469D1 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = ../Tests/Helpers/CFMAPIClientSpec.m; sourceTree = "<group>"; };
 		EA6AA06C17F0C00800E469D1 /* CFMSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMSessionManager.h; sourceTree = "<group>"; };
 		EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMSessionManager.m; sourceTree = "<group>"; };
+		EA6AA06F17F0DF4000E469D1 /* private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = private.plist; path = Console.fm/private.plist; sourceTree = SOURCE_ROOT; };
+		EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = Console.fmTests/Tests/Helpers/CFMAPIClientSpec.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				EA54FCA417ECC09B0023FEE0 /* InfoPlist.strings */,
 				EA54FCA717ECC09B0023FEE0 /* main.m */,
 				EA54FCA917ECC09B0023FEE0 /* Console.fm-Prefix.pch */,
+				EA6AA06F17F0DF4000E469D1 /* private.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -363,7 +366,7 @@
 		EA6AA06817F00C3600E469D1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				EA6AA06917F00C3600E469D1 /* CFMAPIClientSpec.m */,
+				EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */,
 			);
 			name = Helpers;
 			path = Console.fmTests/Helpers;
@@ -473,6 +476,7 @@
 				EA54FCE217ECC89D0023FEE0 /* Icon-Small-50@2x.png in Resources */,
 				EA54FCE417ECC89D0023FEE0 /* Icon-Small@2x.png in Resources */,
 				EA54FCDF17ECC89D0023FEE0 /* Icon-76.png in Resources */,
+				EA6AA07017F0DF4000E469D1 /* private.plist in Resources */,
 				EA54FCE717ECC89D0023FEE0 /* iTunesArtwork.png in Resources */,
 				EA54FCA617ECC09B0023FEE0 /* InfoPlist.strings in Resources */,
 				EA54FCE817ECC89D0023FEE0 /* iTunesArtwork@2x.png in Resources */,
@@ -594,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA7BAF917F0E2310042B9D6 /* CFMAPIClientSpec.m in Sources */,
 				EA54FCFD17ECEA9D0023FEE0 /* CFMGenre+JSONFixture.m in Sources */,
 				EA54FCFF17ECEE390023FEE0 /* CFMArtistSpec.m in Sources */,
 				EA6AA04F17EF9DAD00E469D1 /* CFMAPIClient+StubExtentions.m in Sources */,
@@ -601,7 +606,6 @@
 				EA6AA06317F0072E00E469D1 /* CFMArtist+JSONFixture.m in Sources */,
 				EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */,
 				EA6AA05A17F0067900E469D1 /* CFMObjectSpec.m in Sources */,
-				EA6AA06B17F00C4600E469D1 /* CFMAPIClientSpec.m in Sources */,
 				EA6AA06217F0072B00E469D1 /* CFMTrack+JSONFixture.m in Sources */,
 				EA6AA06117F0071E00E469D1 /* CFMObject+JSONFixture.m in Sources */,
 			);
