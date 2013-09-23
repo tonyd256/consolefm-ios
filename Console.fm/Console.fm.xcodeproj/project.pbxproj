@@ -51,6 +51,7 @@
 		EA6AA06317F0072E00E469D1 /* CFMArtist+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0417ECF6CB0023FEE0 /* CFMArtist+JSONFixture.m */; };
 		EA6AA06717F00C0900E469D1 /* CFMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06617F00C0900E469D1 /* CFMAPIClient.m */; };
 		EA6AA06B17F00C4600E469D1 /* CFMAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06917F00C3600E469D1 /* CFMAPIClientSpec.m */; };
+		EA6AA06E17F0C00800E469D1 /* CFMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */; };
 		EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0717ED04B90023FEE0 /* CFMTrackSpec.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		EA6AA06517F00C0900E469D1 /* CFMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMAPIClient.h; sourceTree = "<group>"; };
 		EA6AA06617F00C0900E469D1 /* CFMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMAPIClient.m; sourceTree = "<group>"; };
 		EA6AA06917F00C3600E469D1 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = ../Tests/Helpers/CFMAPIClientSpec.m; sourceTree = "<group>"; };
+		EA6AA06C17F0C00800E469D1 /* CFMSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMSessionManager.h; sourceTree = "<group>"; };
+		EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMSessionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +353,8 @@
 			children = (
 				EA6AA06517F00C0900E469D1 /* CFMAPIClient.h */,
 				EA6AA06617F00C0900E469D1 /* CFMAPIClient.m */,
+				EA6AA06C17F0C00800E469D1 /* CFMSessionManager.h */,
+				EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */,
 			);
 			name = Helpers;
 			path = Console.fm/Helpers;
@@ -577,6 +582,7 @@
 				EA54FD0B17ED05A20023FEE0 /* CFMTrack.m in Sources */,
 				EA54FD0617ECFE940023FEE0 /* CFMArtist.m in Sources */,
 				EA54FCF817ECE8140023FEE0 /* CFMGenre.m in Sources */,
+				EA6AA06E17F0C00800E469D1 /* CFMSessionManager.m in Sources */,
 				EA54FCB217ECC09B0023FEE0 /* CFMViewController.m in Sources */,
 				EA54FCA817ECC09B0023FEE0 /* main.m in Sources */,
 				EA6AA05D17F006F000E469D1 /* CFMObject.m in Sources */,

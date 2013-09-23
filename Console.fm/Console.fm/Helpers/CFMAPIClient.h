@@ -12,9 +12,7 @@ typedef void (^CFMCompletionBlock)(NSError *, NSArray *);
 
 @interface CFMAPIClient : AFHTTPSessionManager
 
-+ (instancetype)sharedClient;
-
-- (void)fetchGenresWithCompletion:(CFMCompletionBlock)complete;
-- (void)fetchTracksForGenre:(NSString *)genre complete:(CFMCompletionBlock)complete;
++ (void)fetchGenresWithCompletion:(CFMCompletionBlock)complete;
++ (void)fetchTracksForGenre:(NSString *)genre completion:(CFMCompletionBlock)complete;
 
 @end
