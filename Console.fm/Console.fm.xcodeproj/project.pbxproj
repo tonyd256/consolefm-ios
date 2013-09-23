@@ -38,13 +38,14 @@
 		EA54FCF817ECE8140023FEE0 /* CFMGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FCF717ECE8140023FEE0 /* CFMGenre.m */; };
 		EA54FCFD17ECEA9D0023FEE0 /* CFMGenre+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FCFC17ECEA9D0023FEE0 /* CFMGenre+JSONFixture.m */; };
 		EA54FCFF17ECEE390023FEE0 /* CFMArtistSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FCFE17ECEE390023FEE0 /* CFMArtistSpec.m */; };
-		EA54FD0517ECF6CB0023FEE0 /* CFMArtist+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0417ECF6CB0023FEE0 /* CFMArtist+JSONFixture.m */; };
 		EA54FD0617ECFE940023FEE0 /* CFMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0117ECEE700023FEE0 /* CFMArtist.m */; };
 		EA54FD0B17ED05A20023FEE0 /* CFMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0A17ED05A20023FEE0 /* CFMTrack.m */; };
-		EA54FD0E17ED07B40023FEE0 /* CFMTrack+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0D17ED07B40023FEE0 /* CFMTrack+JSONFixture.m */; };
+		EA6AA05A17F0067900E469D1 /* CFMObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA05817F0067300E469D1 /* CFMObjectSpec.m */; };
+		EA6AA05D17F006F000E469D1 /* CFMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA05C17F006F000E469D1 /* CFMObject.m */; };
+		EA6AA06117F0071E00E469D1 /* CFMObject+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA05F17F0071B00E469D1 /* CFMObject+JSONFixture.m */; };
+		EA6AA06217F0072B00E469D1 /* CFMTrack+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0D17ED07B40023FEE0 /* CFMTrack+JSONFixture.m */; };
+		EA6AA06317F0072E00E469D1 /* CFMArtist+JSONFixture.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0417ECF6CB0023FEE0 /* CFMArtist+JSONFixture.m */; };
 		EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0717ED04B90023FEE0 /* CFMTrackSpec.m */; };
-		EABFA25E17ED15000061D862 /* CFMAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFA25C17ED14F90061D862 /* CFMAPIClientSpec.m */; };
-		EABFA26117ED17E60061D862 /* CFMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFA26017ED17E60061D862 /* CFMAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,9 +110,11 @@
 		EA54FD0A17ED05A20023FEE0 /* CFMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = CFMTrack.m; path = Console.fm/Models/CFMTrack.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EA54FD0C17ED07B40023FEE0 /* CFMTrack+JSONFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "CFMTrack+JSONFixture.h"; path = "Console.fmTests/Fixtures/CFMTrack+JSONFixture.h"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EA54FD0D17ED07B40023FEE0 /* CFMTrack+JSONFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "CFMTrack+JSONFixture.m"; path = "Console.fmTests/Fixtures/CFMTrack+JSONFixture.m"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		EABFA25C17ED14F90061D862 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = Console.fmTests/Helpers/CFMAPIClientSpec.m; sourceTree = SOURCE_ROOT; };
-		EABFA25F17ED17E60061D862 /* CFMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMAPIClient.h; path = Console.fm/Helpers/CFMAPIClient.h; sourceTree = SOURCE_ROOT; };
-		EABFA26017ED17E60061D862 /* CFMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClient.m; path = Console.fm/Helpers/CFMAPIClient.m; sourceTree = SOURCE_ROOT; };
+		EA6AA05817F0067300E469D1 /* CFMObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMObjectSpec.m; path = Console.fmTests/Tests/Models/CFMObjectSpec.m; sourceTree = SOURCE_ROOT; };
+		EA6AA05B17F006F000E469D1 /* CFMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMObject.h; path = Console.fm/Models/CFMObject.h; sourceTree = SOURCE_ROOT; };
+		EA6AA05C17F006F000E469D1 /* CFMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMObject.m; path = Console.fm/Models/CFMObject.m; sourceTree = SOURCE_ROOT; };
+		EA6AA05E17F0071B00E469D1 /* CFMObject+JSONFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CFMObject+JSONFixture.h"; path = "Console.fmTests/Fixtures/CFMObject+JSONFixture.h"; sourceTree = SOURCE_ROOT; };
+		EA6AA05F17F0071B00E469D1 /* CFMObject+JSONFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CFMObject+JSONFixture.m"; path = "Console.fmTests/Fixtures/CFMObject+JSONFixture.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				EABFA25917ED0F840061D862 /* Controllers */,
-				EABFA25817ED0F7B0061D862 /* Helpers */,
 				EA54FCF517ECE7F70023FEE0 /* Models */,
 				EA54FCD017ECC88E0023FEE0 /* images */,
 				EA54FCAA17ECC09B0023FEE0 /* CFMAppDelegate.h */,
@@ -260,7 +262,6 @@
 		EA54FCEF17ECE3600023FEE0 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EABFA25B17ED14710061D862 /* Helpers */,
 				EA54FCF017ECE3680023FEE0 /* Models */,
 			);
 			name = Tests;
@@ -269,6 +270,7 @@
 		EA54FCF017ECE3680023FEE0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA6AA05817F0067300E469D1 /* CFMObjectSpec.m */,
 				EA54FCF117ECE5BF0023FEE0 /* CFMGenreSpec.m */,
 				EA54FCFE17ECEE390023FEE0 /* CFMArtistSpec.m */,
 				EA54FD0717ED04B90023FEE0 /* CFMTrackSpec.m */,
@@ -285,6 +287,8 @@
 				EA54FD0117ECEE700023FEE0 /* CFMArtist.m */,
 				EA54FD0917ED05A20023FEE0 /* CFMTrack.h */,
 				EA54FD0A17ED05A20023FEE0 /* CFMTrack.m */,
+				EA6AA05B17F006F000E469D1 /* CFMObject.h */,
+				EA6AA05C17F006F000E469D1 /* CFMObject.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -298,17 +302,10 @@
 				EA54FD0417ECF6CB0023FEE0 /* CFMArtist+JSONFixture.m */,
 				EA54FD0C17ED07B40023FEE0 /* CFMTrack+JSONFixture.h */,
 				EA54FD0D17ED07B40023FEE0 /* CFMTrack+JSONFixture.m */,
+				EA6AA05E17F0071B00E469D1 /* CFMObject+JSONFixture.h */,
+				EA6AA05F17F0071B00E469D1 /* CFMObject+JSONFixture.m */,
 			);
 			name = Fixtures;
-			sourceTree = "<group>";
-		};
-		EABFA25817ED0F7B0061D862 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				EABFA25F17ED17E60061D862 /* CFMAPIClient.h */,
-				EABFA26017ED17E60061D862 /* CFMAPIClient.m */,
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 		EABFA25917ED0F840061D862 /* Controllers */ = {
@@ -316,14 +313,6 @@
 			children = (
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		EABFA25B17ED14710061D862 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				EABFA25C17ED14F90061D862 /* CFMAPIClientSpec.m */,
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,14 +514,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA54FD0E17ED07B40023FEE0 /* CFMTrack+JSONFixture.m in Sources */,
 				EA54FD0B17ED05A20023FEE0 /* CFMTrack.m in Sources */,
 				EA54FD0617ECFE940023FEE0 /* CFMArtist.m in Sources */,
 				EA54FCF817ECE8140023FEE0 /* CFMGenre.m in Sources */,
 				EA54FCB217ECC09B0023FEE0 /* CFMViewController.m in Sources */,
 				EA54FCA817ECC09B0023FEE0 /* main.m in Sources */,
-				EABFA26117ED17E60061D862 /* CFMAPIClient.m in Sources */,
-				EA54FD0517ECF6CB0023FEE0 /* CFMArtist+JSONFixture.m in Sources */,
+				EA6AA05D17F006F000E469D1 /* CFMObject.m in Sources */,
 				EA54FCAC17ECC09B0023FEE0 /* CFMAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,9 +530,12 @@
 			files = (
 				EA54FCFD17ECEA9D0023FEE0 /* CFMGenre+JSONFixture.m in Sources */,
 				EA54FCFF17ECEE390023FEE0 /* CFMArtistSpec.m in Sources */,
-				EABFA25E17ED15000061D862 /* CFMAPIClientSpec.m in Sources */,
 				EA54FCF217ECE5BF0023FEE0 /* CFMGenreSpec.m in Sources */,
+				EA6AA06317F0072E00E469D1 /* CFMArtist+JSONFixture.m in Sources */,
 				EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */,
+				EA6AA05A17F0067900E469D1 /* CFMObjectSpec.m in Sources */,
+				EA6AA06217F0072B00E469D1 /* CFMTrack+JSONFixture.m in Sources */,
+				EA6AA06117F0071E00E469D1 /* CFMObject+JSONFixture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

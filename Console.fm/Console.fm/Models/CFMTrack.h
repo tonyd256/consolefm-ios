@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Simple Casual. All rights reserved.
 //
 
-@interface CFMTrack : NSObject
+#import "CFMObject.h"
 
-@property (copy, readonly) NSString *objectId;
-@property (copy, readonly) NSString *name;
-@property (copy, readonly) NSNumber *genreId;
-@property (copy, readonly) NSString *length;
-@property (copy, readonly) NSNumber *playbackCount;
-@property (copy, readonly) NSString *largeImageUrl;
-@property (copy, readonly) NSString *mediumImageUrl;
-@property (copy, readonly) NSString *smallImageUrl;
-@property (copy, readonly) NSString *trackSourceUrl;
-@property (copy, readonly) NSString *canonicalUrl;
+@interface CFMTrack : CFMObject
+
+@property (strong, readonly) NSNumber *genreId;
+@property (strong, readonly) NSString *length;
+@property (strong, readonly) NSNumber *playbackCount;
+@property (strong, readonly) NSString *largeImageUrl;
+@property (strong, readonly) NSString *mediumImageUrl;
+@property (strong, readonly) NSString *smallImageUrl;
+@property (strong, readonly) NSString *trackSourceUrl;
+@property (strong, readonly) NSString *canonicalUrl;
 @property (strong, readonly) NSArray *artists;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;

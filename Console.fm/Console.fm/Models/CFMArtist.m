@@ -13,11 +13,9 @@
 
 - (instancetype)initWithJSON:(NSDictionary *)json
 {
-    self = [super init];
+    self = [super initWithJSON:json];
     if (!self) return nil;
 
-    _objectId = json[@"id"];
-    _name = json[@"name"];
     _slug = json[@"slug"];
     _totalTracks = json[@"total_tracks"];
 

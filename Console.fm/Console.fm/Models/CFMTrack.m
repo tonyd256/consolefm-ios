@@ -13,12 +13,10 @@
 
 - (instancetype)initWithJSON:(NSDictionary *)json
 {
-    self = [super init];
+    self = [super initWithJSON:json];
     if (!self) return nil;
 
-    _objectId = json[@"id_str"];
     _genreId = json[@"genre_id"];
-    _name = json[@"name"];
     _length = json[@"length"];
     _playbackCount = json[@"playback_count"];
     _largeImageUrl = json[@"large_image_url"];

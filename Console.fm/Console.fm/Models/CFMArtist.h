@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Simple Casual. All rights reserved.
 //
 
-@interface CFMArtist : NSObject
+#import "CFMObject.h"
 
-@property (copy, readonly) NSNumber *objectId;
-@property (copy, readonly) NSString *name;
-@property (copy, readonly) NSString *slug;
-@property (copy, readonly) NSNumber *totalTracks;
+@interface CFMArtist : CFMObject
+
+@property (strong, readonly) NSString *slug;
+@property (strong, readonly) NSNumber *totalTracks;
 @property (strong, readonly) NSSet *genres;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;

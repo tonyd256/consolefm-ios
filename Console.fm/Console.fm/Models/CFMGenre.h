@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Simple Casual. All rights reserved.
 //
 
-@interface CFMGenre : NSObject
+#include "CFMObject.h"
 
-@property (copy, readonly) NSNumber *objectId;
-@property (copy, readonly) NSString *name;
-@property (copy, readonly) NSString *slug;
+@interface CFMGenre : CFMObject
+
+@property (strong, readonly) NSString *slug;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 
