@@ -10,9 +10,9 @@
 
 @interface CFMArtist : CFMObject
 
-@property (strong, readonly) NSString *slug;
+@property (copy, readonly) NSString *slug;
 @property (strong, readonly) NSNumber *totalTracks;
-@property (strong, readonly) NSSet *genres;
+@property (copy, readonly) NSSet *genres;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 

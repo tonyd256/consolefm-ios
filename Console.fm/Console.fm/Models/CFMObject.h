@@ -8,8 +8,8 @@
 
 @interface CFMObject : NSObject
 
-@property (strong, readonly) NSString *objectID;
-@property (strong, readonly) NSString *name;
+@property (copy, readonly) NSString *objectID;
+@property (copy, readonly) NSString *name;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 

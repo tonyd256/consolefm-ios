@@ -15,8 +15,8 @@
     self = [super init];
     if (!self || !json) return nil;
 
-    _objectID = [json[@"id"] stringValue];
-    _name = json[@"name"];
+    _objectID = [[json[@"id"] stringValue] copy];
+    _name = [json[@"name"] copy];
 
     return self;
 }

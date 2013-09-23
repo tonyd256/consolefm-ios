@@ -15,7 +15,7 @@
     self = [super initWithJSON:json];
     if (!self) return nil;
 
-    _slug = json[@"slug"];
+    _slug = [json[@"slug"] copy];
     
     return self;
 }

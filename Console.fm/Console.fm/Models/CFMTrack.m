@@ -17,13 +17,13 @@
     if (!self) return nil;
 
     _genreId = json[@"genre_id"];
-    _length = json[@"length"];
+    _length = [json[@"length"] copy];
     _playbackCount = json[@"playback_count"];
-    _largeImageUrl = json[@"large_image_url"];
-    _mediumImageUrl = json[@"medium_image_url"];
-    _smallImageUrl = json[@"small_image_url"];
-    _trackSourceUrl = json[@"track_source_url"];
-    _canonicalUrl = json[@"canonical_url"];
+    _largeImageUrl = [json[@"large_image_url"] copy];
+    _mediumImageUrl = [json[@"medium_image_url"] copy];
+    _smallImageUrl = [json[@"small_image_url"] copy];
+    _trackSourceUrl = [json[@"track_source_url"] copy];
+    _canonicalUrl = [json[@"canonical_url"] copy];
 
     NSArray *artistsJSON = json[@"artists"];
     NSMutableArray *artists = [NSMutableArray arrayWithCapacity:artistsJSON.count];

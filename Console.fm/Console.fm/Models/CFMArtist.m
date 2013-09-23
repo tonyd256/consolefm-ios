@@ -16,7 +16,7 @@
     self = [super initWithJSON:json];
     if (!self) return nil;
 
-    _slug = json[@"slug"];
+    _slug = [json[@"slug"] copy];
     _totalTracks = json[@"total_tracks"];
 
     NSArray *jsonGenres = json[@"genres"];

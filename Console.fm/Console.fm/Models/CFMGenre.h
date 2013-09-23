@@ -10,7 +10,7 @@
 
 @interface CFMGenre : CFMObject
 
-@property (strong, readonly) NSString *slug;
+@property (copy, readonly) NSString *slug;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
 
