@@ -10,7 +10,9 @@ typedef void (^CFMCompletionBlock)(NSError *, NSArray *);
 
 @interface CFMAPIClient : NSObject
 
-+ (void)fetchGenresWithCompletion:(CFMCompletionBlock)complete;
-+ (void)fetchTracksForGenre:(NSString *)genre completion:(CFMCompletionBlock)complete;
++ (instancetype)sharedClient;
+
+- (void)fetchGenresWithCompletion:(CFMCompletionBlock)complete;
+- (void)fetchTracksForGenre:(NSString *)genre completion:(CFMCompletionBlock)complete;
 
 @end

@@ -18,14 +18,12 @@ static NSString *kAPIBaseURL = @"http://console.fm/api/v2/";
 
 @implementation CFMSessionManager
 
-+ (instancetype)sharedManager
+- (id)init
 {
-    static CFMSessionManager *manager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        manager = [[CFMSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kAPIBaseURL]];
-    });
-    return manager;
+    self = [super initWithBaseURL:[NSURL URLWithString:kAPIBaseURL]];
+    if (!self) return nil;
+
+    return self;
 }
 
 #pragma mark - Properties

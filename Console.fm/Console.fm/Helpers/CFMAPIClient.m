@@ -11,13 +11,38 @@
 #import "CFMGenre.h"
 #import "CFMTrack.h"
 
+@interface CFMAPIClient ()
+
+@property (strong, nonatomic) CFMSessionManager *manager;
+
+@end
+
 @implementation CFMAPIClient
+
++ (instancetype)sharedClient
+{
+    static CFMAPIClient *client = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        client = [[CFMAPIClient alloc] init];
+    });
+    return client;
+}
+
+- (CFMSessionManager *)manager
+{
+    if (!_manager) {
+        _manager = [[CFMSessionManager alloc] init];
+    }
+
+    return _manager;
+}
 
 #pragma mark - Request methods
 
-+ (void)fetchGenresWithCompletion:(CFMCompletionBlock)complete
+- (void)fetchGenresWithCompletion:(CFMCompletionBlock)complete
 {
-    [[CFMSessionManager sharedManager] GET:@"genres" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self.manager GET:@"genres" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray *genresJSON = [[responseObject objectForKey:@"response"] objectForKey:@"genres"];
         NSMutableArray *genres = [NSMutableArray arrayWithCapacity:genresJSON.count];
 
@@ -31,9 +56,9 @@
     }];
 }
 
-+ (void)fetchTracksForGenre:(id)genre completion:(CFMCompletionBlock)complete
+- (void)fetchTracksForGenre:(id)genre completion:(CFMCompletionBlock)complete
 {
-    [[CFMSessionManager sharedManager] GET:[NSString stringWithFormat:@"genres/%@/tracks", genre] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self.manager GET:[NSString stringWithFormat:@"genres/%@/tracks", genre] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray *tracksJSON = [[responseObject objectForKey:@"response"] objectForKey:@"tracks"];
         NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:tracksJSON.count];
 

@@ -10,6 +10,4 @@
 
 @interface CFMSessionManager : AFHTTPSessionManager
 
-+ (instancetype)sharedManager;
-
 @end
