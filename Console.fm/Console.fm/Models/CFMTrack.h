@@ -21,5 +21,6 @@
 @property (copy, readonly) NSArray *artists;
 
 - (instancetype)initWithJSON:(NSDictionary *)json;
+- (NSString *)artistName;
 
 @end

@@ -16,7 +16,6 @@
 		EA54FCA817ECC09B0023FEE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FCA717ECC09B0023FEE0 /* main.m */; };
 		EA54FCAC17ECC09B0023FEE0 /* CFMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FCAB17ECC09B0023FEE0 /* CFMAppDelegate.m */; };
 		EA54FCAF17ECC09B0023FEE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA54FCAD17ECC09B0023FEE0 /* Main.storyboard */; };
-		EA54FCB217ECC09B0023FEE0 /* CFMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FCB117ECC09B0023FEE0 /* CFMViewController.m */; };
 		EA54FCB417ECC09B0023FEE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA54FCB317ECC09B0023FEE0 /* Images.xcassets */; };
 		EA54FCBC17ECC09B0023FEE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA54FC9B17ECC09B0023FEE0 /* Foundation.framework */; };
 		EA54FCBD17ECC09B0023FEE0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA54FC9F17ECC09B0023FEE0 /* UIKit.framework */; };
@@ -54,6 +53,10 @@
 		EA6AA07017F0DF4000E469D1 /* private.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6AA06F17F0DF4000E469D1 /* private.plist */; };
 		EAA7BAF917F0E2310042B9D6 /* CFMAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */; };
 		EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0717ED04B90023FEE0 /* CFMTrackSpec.m */; };
+		EAC092D017F2A3810049579C /* CFMGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC092CF17F2A3810049579C /* CFMGenreViewController.m */; };
+		EAC092D317F2A8150049579C /* CFMTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC092D217F2A8150049579C /* CFMTrackViewController.m */; };
+		EAC092D517F2AB9A0049579C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC092D417F2AB9A0049579C /* AVFoundation.framework */; };
+		EAC092D817F4AEA70049579C /* CFMTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC092D717F4AEA70049579C /* CFMTrackCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +85,6 @@
 		EA54FCAA17ECC09B0023FEE0 /* CFMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CFMAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EA54FCAB17ECC09B0023FEE0 /* CFMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CFMAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EA54FCAE17ECC09B0023FEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EA54FCB017ECC09B0023FEE0 /* CFMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CFMViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		EA54FCB117ECC09B0023FEE0 /* CFMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CFMViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EA54FCB317ECC09B0023FEE0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA54FCB917ECC09B0023FEE0 /* Console.fmTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Console.fmTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA54FCBA17ECC09B0023FEE0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -134,6 +135,13 @@
 		EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMSessionManager.m; sourceTree = "<group>"; };
 		EA6AA06F17F0DF4000E469D1 /* private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = private.plist; path = Console.fm/private.plist; sourceTree = SOURCE_ROOT; };
 		EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = Console.fmTests/Tests/Helpers/CFMAPIClientSpec.m; sourceTree = SOURCE_ROOT; };
+		EAC092CE17F2A3810049579C /* CFMGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMGenreViewController.h; path = Console.fm/Controllers/CFMGenreViewController.h; sourceTree = SOURCE_ROOT; };
+		EAC092CF17F2A3810049579C /* CFMGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMGenreViewController.m; path = Console.fm/Controllers/CFMGenreViewController.m; sourceTree = SOURCE_ROOT; };
+		EAC092D117F2A8150049579C /* CFMTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMTrackViewController.h; path = Console.fm/Controllers/CFMTrackViewController.h; sourceTree = SOURCE_ROOT; };
+		EAC092D217F2A8150049579C /* CFMTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMTrackViewController.m; path = Console.fm/Controllers/CFMTrackViewController.m; sourceTree = SOURCE_ROOT; };
+		EAC092D417F2AB9A0049579C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EAC092D617F4AEA70049579C /* CFMTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMTrackCell.h; path = Console.fm/Views/CFMTrackCell.h; sourceTree = SOURCE_ROOT; };
+		EAC092D717F4AEA70049579C /* CFMTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMTrackCell.m; path = Console.fm/Views/CFMTrackCell.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC092D517F2AB9A0049579C /* AVFoundation.framework in Frameworks */,
 				EA54FC9E17ECC09B0023FEE0 /* CoreGraphics.framework in Frameworks */,
 				EA54FCA017ECC09B0023FEE0 /* UIKit.framework in Frameworks */,
 				EA54FC9C17ECC09B0023FEE0 /* Foundation.framework in Frameworks */,
@@ -189,6 +198,7 @@
 		EA54FC9A17ECC09B0023FEE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAC092D417F2AB9A0049579C /* AVFoundation.framework */,
 				EA54FCF317ECE6560023FEE0 /* SenTestingKit.framework */,
 				EA54FC9B17ECC09B0023FEE0 /* Foundation.framework */,
 				EA54FC9D17ECC09B0023FEE0 /* CoreGraphics.framework */,
@@ -203,6 +213,7 @@
 		EA54FCA117ECC09B0023FEE0 /* Console.fm */ = {
 			isa = PBXGroup;
 			children = (
+				EAC092CA17F0FA3E0049579C /* Views */,
 				EA6AA06417F00C0900E469D1 /* Helpers */,
 				EABFA25917ED0F840061D862 /* Controllers */,
 				EA54FCF517ECE7F70023FEE0 /* Models */,
@@ -210,8 +221,6 @@
 				EA54FCAA17ECC09B0023FEE0 /* CFMAppDelegate.h */,
 				EA54FCAB17ECC09B0023FEE0 /* CFMAppDelegate.m */,
 				EA54FCAD17ECC09B0023FEE0 /* Main.storyboard */,
-				EA54FCB017ECC09B0023FEE0 /* CFMViewController.h */,
-				EA54FCB117ECC09B0023FEE0 /* CFMViewController.m */,
 				EA54FCB317ECC09B0023FEE0 /* Images.xcassets */,
 				EA54FCA217ECC09B0023FEE0 /* Supporting Files */,
 			);
@@ -375,8 +384,21 @@
 		EABFA25917ED0F840061D862 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EAC092CE17F2A3810049579C /* CFMGenreViewController.h */,
+				EAC092CF17F2A3810049579C /* CFMGenreViewController.m */,
+				EAC092D117F2A8150049579C /* CFMTrackViewController.h */,
+				EAC092D217F2A8150049579C /* CFMTrackViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EAC092CA17F0FA3E0049579C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAC092D617F4AEA70049579C /* CFMTrackCell.h */,
+				EAC092D717F4AEA70049579C /* CFMTrackCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,13 +605,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA6AA06717F00C0900E469D1 /* CFMAPIClient.m in Sources */,
+				EAC092D317F2A8150049579C /* CFMTrackViewController.m in Sources */,
 				EA54FD0B17ED05A20023FEE0 /* CFMTrack.m in Sources */,
 				EA54FD0617ECFE940023FEE0 /* CFMArtist.m in Sources */,
 				EA54FCF817ECE8140023FEE0 /* CFMGenre.m in Sources */,
+				EAC092D017F2A3810049579C /* CFMGenreViewController.m in Sources */,
 				EA6AA06E17F0C00800E469D1 /* CFMSessionManager.m in Sources */,
-				EA54FCB217ECC09B0023FEE0 /* CFMViewController.m in Sources */,
 				EA54FCA817ECC09B0023FEE0 /* main.m in Sources */,
 				EA6AA05D17F006F000E469D1 /* CFMObject.m in Sources */,
+				EAC092D817F4AEA70049579C /* CFMTrackCell.m in Sources */,
 				EA54FCAC17ECC09B0023FEE0 /* CFMAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

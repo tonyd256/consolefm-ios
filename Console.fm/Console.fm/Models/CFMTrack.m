@@ -37,4 +37,13 @@
     return self;
 }
 
+- (NSString *)artistName
+{
+    if (_artists.count) {
+        return ((CFMArtist *)[_artists firstObject]).name;
+    }
+
+    return @"";
+}
+
 @end
