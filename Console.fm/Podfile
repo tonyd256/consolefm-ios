@@ -1,7 +1,9 @@
 platform :ios, '7.0'
 
-pod 'AFNetworking', '2.0.0-RC3'
+pod 'AFNetworking', '~>2.0'
 pod 'AFNetworking/UIKit+AFNetworking'
+pod 'TDAudioPlayer', :git => 'https://github.com/tonyd256/TDAudioPlayer'
+pod 'TestFlightSDK', '2.1.1-beta'
 
 target 'Console.fmTests', :exclusive => true do
     pod 'Kiwi', '~> 2.2.1'

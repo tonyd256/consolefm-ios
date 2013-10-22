@@ -7,12 +7,17 @@
 //
 
 #import "CFMAppDelegate.h"
+#import "TestFlight.h"
 
 @implementation CFMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"private" ofType:@"plist"];
+    NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
+
+    [TestFlight takeOff:[private objectForKey:@"TestFlight App Token"]];
+
     return YES;
 }
 							

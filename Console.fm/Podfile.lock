@@ -19,16 +19,26 @@ PODS:
     - Kiwi/ARC
     - Kiwi/NonARC
   - OHHTTPStubs (2.0.0)
+  - TDAudioPlayer (0.0.1)
+  - TestFlightSDK (2.1.1-beta)
 
 DEPENDENCIES:
-  - AFNetworking (= 2.0.0-RC3)
+  - AFNetworking (~> 2.0)
   - AFNetworking/UIKit+AFNetworking
   - Kiwi (~> 2.2.1)
   - OHHTTPStubs (~> 2.0.0)
+  - TDAudioPlayer (from `https://github.com/tonyd256/TDAudioPlayer`)
+  - TestFlightSDK (= 2.1.1-beta)
+
+EXTERNAL SOURCES:
+  TDAudioPlayer:
+    :git: https://github.com/tonyd256/TDAudioPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: 49f64af62e643a68a3f906202f4ed51e18f3bd5c
   Kiwi: 03539aeb004ccd42bdbc31253617b26364315df4
   OHHTTPStubs: 921de87847a4ebd7ff8642715a7eb12a29e1e0f7
+  TDAudioPlayer: ca299c8327984f727fc68a1859abdc29f5ae2972
+  TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
 
-COCOAPODS: 0.25.0
+COCOAPODS: 0.26.2

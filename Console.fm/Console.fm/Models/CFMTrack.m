@@ -13,16 +13,17 @@
 
 - (instancetype)initWithJSON:(NSDictionary *)json
 {
-    self = [super initWithJSON:json];
+    self = [super init];
     if (!self) return nil;
 
+    _objectID = [[json[@"id"] stringValue] copy];
+    self.title = [json[@"name"] copy];
     _genreId = json[@"genre_id"];
     _length = [json[@"length"] copy];
     _playbackCount = json[@"playback_count"];
-    _largeImageUrl = [json[@"large_image_url"] copy];
-    _mediumImageUrl = [json[@"medium_image_url"] copy];
-    _smallImageUrl = [json[@"small_image_url"] copy];
-    _trackSourceUrl = [json[@"track_source_url"] copy];
+    self.albumArtLarge = [json[@"large_image_url"] copy];
+    self.albumArtSmall = [json[@"medium_image_url"] copy];
+    self.source = [NSURL URLWithString:[json[@"track_source_url"] copy]];
     _canonicalUrl = [json[@"canonical_url"] copy];
 
     NSArray *artistsJSON = json[@"artists"];
@@ -34,16 +35,9 @@
 
     _artists = [artists copy];
 
+    self.artist = ((CFMArtist *)[_artists firstObject]).name;
+
     return self;
-}
-
-- (NSString *)artistName
-{
-    if (_artists.count) {
-        return ((CFMArtist *)[_artists firstObject]).name;
-    }
-
-    return @"";
 }
 
 @end

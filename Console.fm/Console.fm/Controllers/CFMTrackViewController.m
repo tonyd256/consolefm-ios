@@ -13,6 +13,8 @@
 #import "CFMAPIClient.h"
 #import "UIImageView+AFNetworking.h"
 #import "CFMTrackCell.h"
+#import "TDAudioPlayer.h"
+#import "TDPlaylist.h"
 
 @interface CFMTrackViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -47,11 +49,27 @@
     CFMTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CFMTrackCell" forIndexPath:indexPath];
 
     CFMTrack *track = self.tracks[indexPath.row];
-    cell.titleLabel.text = track.name;
-    cell.subtitleLabel.text = track.artistName;
-    [cell.albumArt setImageWithURL:[NSURL URLWithString:track.mediumImageUrl] placeholderImage:[UIImage imageNamed:@"Icon"]];
+    cell.titleLabel.text = track.title;
+    cell.subtitleLabel.text = track.artist;
+    [cell.albumArt setImageWithURL:[NSURL URLWithString:track.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([TDAudioPlayer sharedAudioPlayer].isPlaying) {
+        [[TDAudioPlayer sharedAudioPlayer] stop];
+    }
+
+    TDPlaylist *playlist = [[TDPlaylist alloc] init];
+    [playlist addTracksFromArray:self.tracks];
+    playlist.currentTrackIndex = indexPath.row;
+    [[TDAudioPlayer sharedAudioPlayer] loadPlaylist:playlist];
+
+    [[TDAudioPlayer sharedAudioPlayer] play];
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

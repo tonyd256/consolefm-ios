@@ -51,11 +51,15 @@
 		EA6AA06717F00C0900E469D1 /* CFMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06617F00C0900E469D1 /* CFMAPIClient.m */; };
 		EA6AA06E17F0C00800E469D1 /* CFMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */; };
 		EA6AA07017F0DF4000E469D1 /* private.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6AA06F17F0DF4000E469D1 /* private.plist */; };
+		EA74582C1815E87000582630 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7458281815E87000582630 /* pause.png */; };
+		EA74582D1815E87000582630 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7458291815E87000582630 /* pause@2x.png */; };
+		EA74582E1815E87000582630 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = EA74582A1815E87000582630 /* play.png */; };
+		EA74582F1815E87000582630 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA74582B1815E87000582630 /* play@2x.png */; };
+		EA7458321815EA8400582630 /* CFMCurrentTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7458311815EA8400582630 /* CFMCurrentTrackViewController.m */; };
 		EAA7BAF917F0E2310042B9D6 /* CFMAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */; };
 		EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0717ED04B90023FEE0 /* CFMTrackSpec.m */; };
 		EAC092D017F2A3810049579C /* CFMGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC092CF17F2A3810049579C /* CFMGenreViewController.m */; };
 		EAC092D317F2A8150049579C /* CFMTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC092D217F2A8150049579C /* CFMTrackViewController.m */; };
-		EAC092D517F2AB9A0049579C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC092D417F2AB9A0049579C /* AVFoundation.framework */; };
 		EAC092D817F4AEA70049579C /* CFMTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC092D717F4AEA70049579C /* CFMTrackCell.m */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +138,12 @@
 		EA6AA06C17F0C00800E469D1 /* CFMSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMSessionManager.h; sourceTree = "<group>"; };
 		EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMSessionManager.m; sourceTree = "<group>"; };
 		EA6AA06F17F0DF4000E469D1 /* private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = private.plist; path = Console.fm/private.plist; sourceTree = SOURCE_ROOT; };
+		EA7458281815E87000582630 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		EA7458291815E87000582630 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		EA74582A1815E87000582630 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		EA74582B1815E87000582630 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		EA7458301815EA8400582630 /* CFMCurrentTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMCurrentTrackViewController.h; path = Console.fm/Controllers/CFMCurrentTrackViewController.h; sourceTree = SOURCE_ROOT; };
+		EA7458311815EA8400582630 /* CFMCurrentTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMCurrentTrackViewController.m; path = Console.fm/Controllers/CFMCurrentTrackViewController.m; sourceTree = SOURCE_ROOT; };
 		EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = Console.fmTests/Tests/Helpers/CFMAPIClientSpec.m; sourceTree = SOURCE_ROOT; };
 		EAC092CE17F2A3810049579C /* CFMGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMGenreViewController.h; path = Console.fm/Controllers/CFMGenreViewController.h; sourceTree = SOURCE_ROOT; };
 		EAC092CF17F2A3810049579C /* CFMGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMGenreViewController.m; path = Console.fm/Controllers/CFMGenreViewController.m; sourceTree = SOURCE_ROOT; };
@@ -142,6 +152,7 @@
 		EAC092D417F2AB9A0049579C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EAC092D617F4AEA70049579C /* CFMTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMTrackCell.h; path = Console.fm/Views/CFMTrackCell.h; sourceTree = SOURCE_ROOT; };
 		EAC092D717F4AEA70049579C /* CFMTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMTrackCell.m; path = Console.fm/Views/CFMTrackCell.m; sourceTree = SOURCE_ROOT; };
+		EAC092DF17F5E5E50049579C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +160,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAC092D517F2AB9A0049579C /* AVFoundation.framework in Frameworks */,
 				EA54FC9E17ECC09B0023FEE0 /* CoreGraphics.framework in Frameworks */,
 				EA54FCA017ECC09B0023FEE0 /* UIKit.framework in Frameworks */,
 				EA54FC9C17ECC09B0023FEE0 /* Foundation.framework in Frameworks */,
@@ -198,6 +208,7 @@
 		EA54FC9A17ECC09B0023FEE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAC092DF17F5E5E50049579C /* MediaPlayer.framework */,
 				EAC092D417F2AB9A0049579C /* AVFoundation.framework */,
 				EA54FCF317ECE6560023FEE0 /* SenTestingKit.framework */,
 				EA54FC9B17ECC09B0023FEE0 /* Foundation.framework */,
@@ -213,6 +224,7 @@
 		EA54FCA117ECC09B0023FEE0 /* Console.fm */ = {
 			isa = PBXGroup;
 			children = (
+				EA7458271815E84F00582630 /* Images */,
 				EAC092CA17F0FA3E0049579C /* Views */,
 				EA6AA06417F00C0900E469D1 /* Helpers */,
 				EABFA25917ED0F840061D862 /* Controllers */,
@@ -381,6 +393,18 @@
 			path = Console.fmTests/Helpers;
 			sourceTree = SOURCE_ROOT;
 		};
+		EA7458271815E84F00582630 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EA7458281815E87000582630 /* pause.png */,
+				EA7458291815E87000582630 /* pause@2x.png */,
+				EA74582A1815E87000582630 /* play.png */,
+				EA74582B1815E87000582630 /* play@2x.png */,
+			);
+			name = Images;
+			path = ../Console.fm/Images;
+			sourceTree = "<group>";
+		};
 		EABFA25917ED0F840061D862 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +412,8 @@
 				EAC092CF17F2A3810049579C /* CFMGenreViewController.m */,
 				EAC092D117F2A8150049579C /* CFMTrackViewController.h */,
 				EAC092D217F2A8150049579C /* CFMTrackViewController.m */,
+				EA7458301815EA8400582630 /* CFMCurrentTrackViewController.h */,
+				EA7458311815EA8400582630 /* CFMCurrentTrackViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -491,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA54FCEC17ECCD6C0023FEE0 /* Icon-80.png in Resources */,
+				EA74582E1815E87000582630 /* play.png in Resources */,
 				EA54FCB417ECC09B0023FEE0 /* Images.xcassets in Resources */,
 				EA6AA04B17EF98AC00E469D1 /* private.plist in Resources */,
 				EA54FCE617ECC89D0023FEE0 /* Icon@2x.png in Resources */,
@@ -503,10 +530,13 @@
 				EA54FCA617ECC09B0023FEE0 /* InfoPlist.strings in Resources */,
 				EA54FCE817ECC89D0023FEE0 /* iTunesArtwork@2x.png in Resources */,
 				EA54FCE017ECC89D0023FEE0 /* Icon-76@2x.png in Resources */,
+				EA74582F1815E87000582630 /* play@2x.png in Resources */,
 				EA54FCE517ECC89D0023FEE0 /* Icon.png in Resources */,
+				EA74582C1815E87000582630 /* pause.png in Resources */,
 				EA54FCED17ECCD6C0023FEE0 /* Icon-80@2x.png in Resources */,
 				EA54FCAF17ECC09B0023FEE0 /* Main.storyboard in Resources */,
 				EA54FCE317ECC89D0023FEE0 /* Icon-Small.png in Resources */,
+				EA74582D1815E87000582630 /* pause@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +637,7 @@
 				EA6AA06717F00C0900E469D1 /* CFMAPIClient.m in Sources */,
 				EAC092D317F2A8150049579C /* CFMTrackViewController.m in Sources */,
 				EA54FD0B17ED05A20023FEE0 /* CFMTrack.m in Sources */,
+				EA7458321815EA8400582630 /* CFMCurrentTrackViewController.m in Sources */,
 				EA54FD0617ECFE940023FEE0 /* CFMArtist.m in Sources */,
 				EA54FCF817ECE8140023FEE0 /* CFMGenre.m in Sources */,
 				EAC092D017F2A3810049579C /* CFMGenreViewController.m in Sources */,

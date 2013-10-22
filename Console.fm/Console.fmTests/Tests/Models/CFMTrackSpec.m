@@ -14,7 +14,7 @@ describe(@"CFMTrack", ^{
     describe(@"initWithJSON:", ^{
         it(@"should create a track model from JSON", ^{
             CFMTrack *track = [[CFMTrack alloc] initWithJSON:[CFMTrack jsonFixture]];
-            [[track.name should] equal:@"Test Track"];
+            [[track.title should] equal:@"Test Track"];
         });
     });
 });
