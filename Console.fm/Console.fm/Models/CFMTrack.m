@@ -17,14 +17,19 @@
     if (!self) return nil;
 
     _objectID = [[json[@"id"] stringValue] copy];
-    self.title = [json[@"name"] copy];
     _genreId = json[@"genre_id"];
-    _length = [json[@"length"] copy];
-    _playbackCount = json[@"playback_count"];
+
+    self.title = [json[@"name"] copy];
     self.albumArtLarge = [json[@"large_image_url"] copy];
     self.albumArtSmall = [json[@"medium_image_url"] copy];
     self.source = [NSURL URLWithString:[json[@"track_source_url"] copy]];
-    _canonicalUrl = [json[@"canonical_url"] copy];
+
+    NSString *length = [json[@"length"] copy];
+    NSArray *timeArray = [length componentsSeparatedByString:@":"];
+
+    if (timeArray.count >= 2) {
+        self.duration = [timeArray[0] intValue] * 60 + [timeArray[1] intValue];
+    }
 
     NSArray *artistsJSON = json[@"artists"];
     NSMutableArray *artists = [NSMutableArray arrayWithCapacity:artistsJSON.count];

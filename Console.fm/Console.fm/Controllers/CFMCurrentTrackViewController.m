@@ -31,6 +31,7 @@
     [self.pauseButton setHidden:YES];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidChangeTrack:) name:TDAudioPlayerDidChangeTracksNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidForcePause:) name:TDAudioPlayerDidForcePauseNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -51,14 +52,6 @@
     }
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:[TDAudioPlayer sharedAudioPlayer].loadedPlaylist] forKey:@"savedPlaylist"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
 - (BOOL)canBecomeFirstResponder
 {
     return YES;
@@ -71,7 +64,6 @@
     switch (event.subtype) {
         case UIEventSubtypeRemoteControlPause:
             [[TDAudioPlayer sharedAudioPlayer] pause];
-            [[TDAudioPlayer sharedAudioPlayer] play];
             [self.playButton setHidden:NO];
             [self.pauseButton setHidden:YES];
             break;
@@ -119,6 +111,15 @@
     [self.albumImage setImageWithURL:[NSURL URLWithString:track.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
     [self.playButton setHidden:YES];
     [self.pauseButton setHidden:NO];
+
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:[TDAudioPlayer sharedAudioPlayer].loadedPlaylist] forKey:@"savedPlaylist"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)audioPlayerDidForcePause:(NSNotification *)notification
+{
+    [self.playButton setHidden:NO];
+    [self.pauseButton setHidden:YES];
 }
 
 - (IBAction)play:(id)sender
