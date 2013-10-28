@@ -56,6 +56,7 @@
 		EA74582E1815E87000582630 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = EA74582A1815E87000582630 /* play.png */; };
 		EA74582F1815E87000582630 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA74582B1815E87000582630 /* play@2x.png */; };
 		EA7458321815EA8400582630 /* CFMCurrentTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7458311815EA8400582630 /* CFMCurrentTrackViewController.m */; };
+		EA7B2E54181EADAE0007A936 /* CFMMainContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7B2E53181EADAE0007A936 /* CFMMainContainerViewController.m */; };
 		EAA7BAF917F0E2310042B9D6 /* CFMAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */; };
 		EABFA25717ED0CEB0061D862 /* CFMTrackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0717ED04B90023FEE0 /* CFMTrackSpec.m */; };
 		EAC092D017F2A3810049579C /* CFMGenreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC092CF17F2A3810049579C /* CFMGenreViewController.m */; };
@@ -144,6 +145,8 @@
 		EA74582B1815E87000582630 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
 		EA7458301815EA8400582630 /* CFMCurrentTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMCurrentTrackViewController.h; path = Console.fm/Controllers/CFMCurrentTrackViewController.h; sourceTree = SOURCE_ROOT; };
 		EA7458311815EA8400582630 /* CFMCurrentTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMCurrentTrackViewController.m; path = Console.fm/Controllers/CFMCurrentTrackViewController.m; sourceTree = SOURCE_ROOT; };
+		EA7B2E52181EADAE0007A936 /* CFMMainContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMMainContainerViewController.h; path = Console.fm/Controllers/CFMMainContainerViewController.h; sourceTree = SOURCE_ROOT; };
+		EA7B2E53181EADAE0007A936 /* CFMMainContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMMainContainerViewController.m; path = Console.fm/Controllers/CFMMainContainerViewController.m; sourceTree = SOURCE_ROOT; };
 		EAA7BAF717F0E2260042B9D6 /* CFMAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMAPIClientSpec.m; path = Console.fmTests/Tests/Helpers/CFMAPIClientSpec.m; sourceTree = SOURCE_ROOT; };
 		EAC092CE17F2A3810049579C /* CFMGenreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMGenreViewController.h; path = Console.fm/Controllers/CFMGenreViewController.h; sourceTree = SOURCE_ROOT; };
 		EAC092CF17F2A3810049579C /* CFMGenreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMGenreViewController.m; path = Console.fm/Controllers/CFMGenreViewController.m; sourceTree = SOURCE_ROOT; };
@@ -414,6 +417,8 @@
 				EAC092D217F2A8150049579C /* CFMTrackViewController.m */,
 				EA7458301815EA8400582630 /* CFMCurrentTrackViewController.h */,
 				EA7458311815EA8400582630 /* CFMCurrentTrackViewController.m */,
+				EA7B2E52181EADAE0007A936 /* CFMMainContainerViewController.h */,
+				EA7B2E53181EADAE0007A936 /* CFMMainContainerViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -640,6 +645,7 @@
 				EA7458321815EA8400582630 /* CFMCurrentTrackViewController.m in Sources */,
 				EA54FD0617ECFE940023FEE0 /* CFMArtist.m in Sources */,
 				EA54FCF817ECE8140023FEE0 /* CFMGenre.m in Sources */,
+				EA7B2E54181EADAE0007A936 /* CFMMainContainerViewController.m in Sources */,
 				EAC092D017F2A3810049579C /* CFMGenreViewController.m in Sources */,
 				EA6AA06E17F0C00800E469D1 /* CFMSessionManager.m in Sources */,
 				EA54FCA817ECC09B0023FEE0 /* main.m in Sources */,

@@ -26,10 +26,25 @@
 
     [[CFMAPIClient sharedClient] fetchGenresWithCompletion:^(NSError *error, NSArray *genres) {
         if (!error) {
-            self.genres = genres;
+            CFMGenre *topGenre = [[CFMGenre alloc] initWithJSON:@{@"name": @"Top Tracks",
+                                                                  @"id": @24,
+                                                                  @"slug": @"top"}];
+            NSMutableArray *genresArray = [NSMutableArray array];
+            [genresArray addObject:topGenre];
+            [genresArray addObjectsFromArray:genres];
+            self.genres = [genresArray copy];
             [self.tableView reloadData];
+
+            [self performSelector:@selector(openMainGenre) withObject:nil afterDelay:1.0];
         }
     }];
+}
+
+- (void)openMainGenre
+{
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"savedPlaylist"]) {
+        [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    }
 }
 
 #pragma mark - UITableViewDataSource

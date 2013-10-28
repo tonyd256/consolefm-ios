@@ -25,10 +25,13 @@
     self.source = [NSURL URLWithString:[json[@"track_source_url"] copy]];
 
     NSString *length = [json[@"length"] copy];
-    NSArray *timeArray = [length componentsSeparatedByString:@":"];
 
-    if (timeArray.count >= 2) {
-        self.duration = [timeArray[0] intValue] * 60 + [timeArray[1] intValue];
+    if (![length isEqual:[NSNull null]]) {
+        NSArray *timeArray = [length componentsSeparatedByString:@":"];
+
+        if (timeArray.count >= 2) {
+            self.duration = [timeArray[0] intValue] * 60 + [timeArray[1] intValue];
+        }
     }
 
     NSArray *artistsJSON = json[@"artists"];

@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
 
+    [self setTitle:self.genre.name];
+
     [[CFMAPIClient sharedClient] fetchTracksForGenre:self.genre.objectID completion:^(NSError *error, NSArray *tracks) {
         if (!error) {
             self.tracks = tracks;
