@@ -19,11 +19,11 @@ PODS:
   - AFNetworking/Serialization (2.0.1)
   - AFNetworking/UIKit (2.0.1):
     - AFNetworking/NSURLConnection
-  - Kiwi (2.2.2):
+  - Kiwi (2.2.3):
     - Kiwi/SenTestingKit
-  - Kiwi/ARC (2.2.2)
-  - Kiwi/NonARC (2.2.2)
-  - Kiwi/SenTestingKit (2.2.2):
+  - Kiwi/ARC (2.2.3)
+  - Kiwi/NonARC (2.2.3)
+  - Kiwi/SenTestingKit (2.2.3):
     - Kiwi/ARC
     - Kiwi/NonARC
   - OHHTTPStubs (2.0.0)
@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: a6f11ac4ac087303e6ff87adc1ba57b0dac20ef8
-  Kiwi: 03539aeb004ccd42bdbc31253617b26364315df4
+  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   OHHTTPStubs: 921de87847a4ebd7ff8642715a7eb12a29e1e0f7
   TDAudioPlayer: 40545f380d06ca81d206b5f04bdcc96dcda015ce
   TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
