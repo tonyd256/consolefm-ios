@@ -14,7 +14,6 @@
 #import "UIImageView+AFNetworking.h"
 #import "CFMTrackCell.h"
 #import "TDAudioPlayer.h"
-#import "TDPlaylist.h"
 
 @interface CFMTrackViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -64,10 +63,8 @@
         [[TDAudioPlayer sharedAudioPlayer] stop];
     }
 
-    TDPlaylist *playlist = [[TDPlaylist alloc] init];
-    [playlist addTracksFromArray:self.tracks];
-    playlist.currentTrackIndex = indexPath.row;
-    [[TDAudioPlayer sharedAudioPlayer] loadPlaylist:playlist];
+    NSArray *playlist = [self.tracks copy];
+    [[TDAudioPlayer sharedAudioPlayer] loadTrackIndex:indexPath.row fromPlaylist:playlist];
 
     [[TDAudioPlayer sharedAudioPlayer] play];
 

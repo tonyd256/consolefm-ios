@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.0.1):
+  - AFNetworking (2.0.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.0.1):
+  - AFNetworking/NSURLConnection (2.0.2):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.0.1):
+  - AFNetworking/NSURLSession (2.0.2):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.0.1)
-  - AFNetworking/Security (2.0.1)
-  - AFNetworking/Serialization (2.0.1)
-  - AFNetworking/UIKit (2.0.1):
+  - AFNetworking/Reachability (2.0.2)
+  - AFNetworking/Security (2.0.2)
+  - AFNetworking/Serialization (2.0.2)
+  - AFNetworking/UIKit (2.0.2):
     - AFNetworking/NSURLConnection
   - Kiwi (2.2.3):
     - Kiwi/SenTestingKit
@@ -27,7 +27,7 @@ PODS:
     - Kiwi/ARC
     - Kiwi/NonARC
   - OHHTTPStubs (2.0.0)
-  - TDAudioPlayer (0.0.2)
+  - TDAudioPlayer (0.0.3)
   - TestFlightSDK (2.1.1-beta)
 
 DEPENDENCIES:
@@ -43,10 +43,10 @@ EXTERNAL SOURCES:
     :git: https://github.com/tonyd256/TDAudioPlayer
 
 SPEC CHECKSUMS:
-  AFNetworking: a6f11ac4ac087303e6ff87adc1ba57b0dac20ef8
+  AFNetworking: 22de50ae71ab1c4859773f61068d6fcd1d8f9a4d
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   OHHTTPStubs: 921de87847a4ebd7ff8642715a7eb12a29e1e0f7
-  TDAudioPlayer: 40545f380d06ca81d206b5f04bdcc96dcda015ce
+  TDAudioPlayer: cde0c36753fdd83b1877fa0b2210d819d7f31813
   TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
 
-COCOAPODS: 0.26.2
+COCOAPODS: 0.27.1

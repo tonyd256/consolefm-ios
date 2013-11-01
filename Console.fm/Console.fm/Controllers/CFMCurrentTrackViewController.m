@@ -10,8 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "TDAudioInputStreamer.h"
 #import "TDAudioPlayer.h"
-#import "TDPlaylist.h"
-#import "TDTrack.h"
+#import "CFMTrack.h"
 
 @interface CFMCurrentTrackViewController ()
 
@@ -52,10 +51,11 @@
 
     if (![TDAudioPlayer sharedAudioPlayer].loadedPlaylist) {
         NSData *playlistData = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedPlaylist"];
+        NSNumber *currentTrackIndex = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedTrackIndex"];
 
         if (playlistData) {
-            TDPlaylist *playlist = (TDPlaylist *)[NSKeyedUnarchiver unarchiveObjectWithData:playlistData];
-            [[TDAudioPlayer sharedAudioPlayer] loadPlaylist:playlist];
+            NSArray *playlist = [NSKeyedUnarchiver unarchiveObjectWithData:playlistData];
+            [[TDAudioPlayer sharedAudioPlayer] loadTrackIndex:[currentTrackIndex unsignedIntegerValue] fromPlaylist:playlist];
             [self.bufferingIndicator setHidden:YES];
             [self.playButton setHidden:NO];
             [self.pauseButton setHidden:YES];
@@ -112,7 +112,7 @@
 
 - (void)audioPlayerDidChangeTrack:(NSNotification *)notification
 {
-    TDTrack *track = [TDAudioPlayer sharedAudioPlayer].currentTrack;
+    CFMTrack *track = (CFMTrack *)[TDAudioPlayer sharedAudioPlayer].currentTrack;
 
     self.titleLabel.text = track.title;
     self.subtitleLabel.text = track.artist;
@@ -123,7 +123,13 @@
 
     self.elapsedTime = 0;
     self.elapsedPlayTimeLabel.text = @"0:00";
-    self.remainingPlayTimeLabel.text = [NSString stringWithFormat:@"-%@", [self stringForSeconds:track.duration]];
+
+    if ([track.duration intValue] != 0) {
+        self.remainingPlayTimeLabel.text = [NSString stringWithFormat:@"-%@", [self stringForSeconds:[track.duration unsignedIntegerValue]]];
+    } else {
+        self.remainingPlayTimeLabel.text = @"";
+    }
+
     self.playTimeProgress.progress = 0;
 
     if (self.playTimer) {
@@ -131,7 +137,10 @@
         self.playTimer = nil;
     }
 
+    NSUInteger index = [[TDAudioPlayer sharedAudioPlayer].loadedPlaylist indexOfObject:[TDAudioPlayer sharedAudioPlayer].currentTrack];
+
     [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:[TDAudioPlayer sharedAudioPlayer].loadedPlaylist] forKey:@"savedPlaylist"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithUnsignedInteger:index] forKey:@"savedTrackIndex"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -141,8 +150,7 @@
     [self.playButton setHidden:YES];
     [self.pauseButton setHidden:NO];
 
-//    if (!self.playTimer)
-        self.playTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(elapseTime) userInfo:nil repeats:YES];
+    self.playTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(elapseTime) userInfo:nil repeats:YES];
 }
 
 - (void)audioPlayerDidForcePause:(NSNotification *)notification
@@ -157,10 +165,12 @@
 - (void)elapseTime
 {
     self.elapsedTime++;
-    NSUInteger duration = [TDAudioPlayer sharedAudioPlayer].currentTrack.duration;
+    NSUInteger duration = [[TDAudioPlayer sharedAudioPlayer].currentTrack.duration unsignedIntegerValue];
 
-    self.playTimeProgress.progress = (float)self.elapsedTime / duration;
     self.elapsedPlayTimeLabel.text = [self stringForSeconds:self.elapsedTime];
+
+    if (duration == 0) return;
+    self.playTimeProgress.progress = (float)self.elapsedTime / duration;
     self.remainingPlayTimeLabel.text = [NSString stringWithFormat:@"-%@", [self stringForSeconds:duration - self.elapsedTime]];
 }
 
