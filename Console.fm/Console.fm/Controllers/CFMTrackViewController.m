@@ -9,11 +9,10 @@
 #import "CFMTrackViewController.h"
 #import "CFMGenre.h"
 #import "CFMTrack.h"
-#import "CFMArtist.h"
 #import "CFMAPIClient.h"
 #import "UIImageView+AFNetworking.h"
 #import "CFMTrackCell.h"
-#import "TDAudioPlayer.h"
+#import "CFMPlaylist.h"
 
 @interface CFMTrackViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -50,22 +49,22 @@
     CFMTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CFMTrackCell" forIndexPath:indexPath];
 
     CFMTrack *track = self.tracks[indexPath.row];
-    cell.titleLabel.text = track.title;
-    cell.subtitleLabel.text = track.artist;
-    [cell.albumArt setImageWithURL:[NSURL URLWithString:track.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
+    cell.titleLabel.text = track.info.title;
+    cell.subtitleLabel.text = track.info.artist;
+    [cell.albumArt setImageWithURL:[NSURL URLWithString:track.info.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([TDAudioPlayer sharedAudioPlayer].isPlaying) {
+    if ([TDAudioPlayer sharedAudioPlayer].state == TDAudioPlayerStatePlaying) {
         [[TDAudioPlayer sharedAudioPlayer] stop];
     }
 
-    NSArray *playlist = [self.tracks copy];
-    [[TDAudioPlayer sharedAudioPlayer] loadTrackIndex:indexPath.row fromPlaylist:playlist];
-
+    [[CFMPlaylist sharedPlaylist] removeAllTracks];
+    [[CFMPlaylist sharedPlaylist] addTracksFromArray:[self.tracks copy]];
+    [[CFMPlaylist sharedPlaylist] loadTrackAtIndex:indexPath.row];
     [[TDAudioPlayer sharedAudioPlayer] play];
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

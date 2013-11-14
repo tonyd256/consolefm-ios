@@ -32,8 +32,12 @@ static NSString *kAPIBaseURL = @"http://console.fm/api/v2/";
 {
     if (!_apiKey) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"private" ofType:@"plist"];
-        NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
-        _apiKey = [private objectForKey:@"Console.fm API Key"];
+        if (path) {
+            NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
+            _apiKey = [private objectForKey:@"Console.fm API Key"];
+        } else {
+            _apiKey = @"default key";
+        }
     }
 
     return _apiKey;

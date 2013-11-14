@@ -14,11 +14,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"private" ofType:@"plist"];
-    NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
 
-    [TestFlight takeOff:[private objectForKey:@"TestFlight App Token"]];
+    if (path) {
+        NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
+        [TestFlight takeOff:[private objectForKey:@"TestFlight App Token"]];
+    }
 
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     return YES;
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    [[TDAudioPlayer sharedAudioPlayer] handleRemoteControlEvent:event];
 }
 
 @end

@@ -27,7 +27,7 @@ PODS:
     - Kiwi/ARC
     - Kiwi/NonARC
   - OHHTTPStubs (2.0.0)
-  - TDAudioPlayer (0.0.3)
+  - TDAudioPlayer (0.0.5)
   - TestFlightSDK (2.1.1-beta)
 
 DEPENDENCIES:
@@ -46,7 +46,7 @@ SPEC CHECKSUMS:
   AFNetworking: 22de50ae71ab1c4859773f61068d6fcd1d8f9a4d
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
   OHHTTPStubs: 921de87847a4ebd7ff8642715a7eb12a29e1e0f7
-  TDAudioPlayer: cde0c36753fdd83b1877fa0b2210d819d7f31813
+  TDAudioPlayer: e246c80c4b3c77eb764c7f49f011ab15c2d67470
   TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
 
 COCOAPODS: 0.27.1
