@@ -79,10 +79,9 @@ NSString *const CFMAudioPlayerDidFinishPlayingNotification = @"CFMAudioPlayerDid
 {
     if (!self.currentTrack || self.playing) return;
 
+    self.playing = YES;
     if (self.player.status == AVPlayerStatusReadyToPlay)
         [self startPlaying];
-
-    self.playing = YES;
 }
 
 - (void)pause
@@ -91,8 +90,9 @@ NSString *const CFMAudioPlayerDidFinishPlayingNotification = @"CFMAudioPlayerDid
 
     [self.player pause];
     [self setNowPlayingInfoWithPlaybackRate:@0.000001f];
-
     self.playing = NO;
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:CFMAudioPlayerDidPauseNotification object:nil];
 }
 
 - (void)stop
