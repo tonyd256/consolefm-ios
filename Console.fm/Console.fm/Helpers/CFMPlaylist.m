@@ -28,18 +28,7 @@
     return shared;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (!self) return nil;
-
-    self.trackList = [NSMutableArray array];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playNextTrack:) name:TDAudioPlayerNextTrackRequestNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playPreviousTrack:) name:TDAudioPlayerPreviousTrackRequestNotification object:nil];
-
-    return self;
-}
+#pragma mark - Public Methods
 
 - (void)addTrack:(CFMTrack *)track
 {
@@ -57,7 +46,45 @@
     return self.playlist[index];
 }
 
+- (void)loadTrackAtIndex:(NSUInteger)index
+{
+    if (index >= self.playlist.count) return;
+
+    self.currentTrackIndex = index;
+    CFMTrack *track = self.playlist[index];
+    [[CFMAudioPlayer sharedAudioPlayer] loadTrack:track];
+}
+
+- (void)playNextTrack
+{
+    if (self.currentTrackIndex + 1 >= self.playlist.count) return;
+
+    [self loadTrackAtIndex:(self.currentTrackIndex + 1)];
+    [[CFMAudioPlayer sharedAudioPlayer] play];
+}
+
+- (void)playPreviousTrack
+{
+    if (self.currentTrackIndex == 0) return;
+
+    [self loadTrackAtIndex:(self.currentTrackIndex - 1)];
+    [[CFMAudioPlayer sharedAudioPlayer] play];
+}
+
+- (void)removeAllTracks
+{
+    [self.trackList removeAllObjects];
+}
+
 #pragma mark - Properties
+
+- (NSMutableArray *)trackList
+{
+    if (!_trackList)
+        _trackList = [NSMutableArray array];
+
+    return _trackList;
+}
 
 - (CFMTrack *)currentTrack
 {
@@ -67,36 +94,6 @@
 - (NSArray *)playlist
 {
     return [self.trackList copy];
-}
-
-- (void)loadTrackAtIndex:(NSUInteger)index
-{
-    if (index >= self.playlist.count) return;
-
-    CFMTrack *track = self.playlist[index];
-    [[TDAudioPlayer sharedAudioPlayer] loadAudioFromURL:track.source withMetaData:track.info];
-    self.currentTrackIndex = index;
-}
-
-- (void)playNextTrack:(NSNotification *)notification
-{
-    if (self.currentTrackIndex + 1 >= self.playlist.count) return;
-
-    [self loadTrackAtIndex:(self.currentTrackIndex + 1)];
-    [[TDAudioPlayer sharedAudioPlayer] play];
-}
-
-- (void)playPreviousTrack:(NSNotification *)notification
-{
-    if (self.currentTrackIndex == 0) return;
-
-    [self loadTrackAtIndex:(self.currentTrackIndex - 1)];
-    [[TDAudioPlayer sharedAudioPlayer] play];
-}
-
-- (void)removeAllTracks
-{
-    [self.trackList removeAllObjects];
 }
 
 @end

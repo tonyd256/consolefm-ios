@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FV6-db-TjE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Main Container View Controller-->
@@ -143,46 +143,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-Lr-Hmv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-Lr-Hmv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CFMTrackCell" rowHeight="51" id="PzM-tB-rL4" customClass="CFMTrackCell">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="51"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CFMTrackCell" rowHeight="71" id="PzM-tB-rL4" customClass="CFMTrackCell">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PzM-tB-rL4" id="UFW-4J-83r">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQ4-F3-ExP">
-                                                    <rect key="frame" x="53" y="4" width="247" height="22"/>
+                                                    <rect key="frame" x="63" y="20" width="237" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Th-to-xRf">
-                                                    <rect key="frame" x="53" y="31" width="247" height="15"/>
+                                                    <rect key="frame" x="63" y="40" width="237" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9mC-L8-nKp">
-                                                    <rect key="frame" x="15" y="10" width="30" height="30"/>
+                                                    <rect key="frame" x="5" y="10" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Npb-n1-gE0"/>
-                                                        <constraint firstAttribute="width" constant="30" id="umm-zM-N6c"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Npb-n1-gE0"/>
+                                                        <constraint firstAttribute="width" constant="50" id="umm-zM-N6c"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HQ4-F3-ExP" firstAttribute="leading" secondItem="9mC-L8-nKp" secondAttribute="trailing" constant="8" id="7TB-dY-ecd"/>
-                                                <constraint firstItem="9mC-L8-nKp" firstAttribute="leading" secondItem="UFW-4J-83r" secondAttribute="leading" constant="15" id="A9U-0Q-sLy"/>
-                                                <constraint firstItem="HQ4-F3-ExP" firstAttribute="top" secondItem="UFW-4J-83r" secondAttribute="top" constant="4" id="AB4-V6-IBl"/>
-                                                <constraint firstAttribute="bottom" secondItem="8Th-to-xRf" secondAttribute="bottom" constant="4" id="CCI-Bi-gfV"/>
+                                                <constraint firstItem="9mC-L8-nKp" firstAttribute="leading" secondItem="UFW-4J-83r" secondAttribute="leading" constant="5" id="A9U-0Q-sLy"/>
+                                                <constraint firstItem="HQ4-F3-ExP" firstAttribute="top" secondItem="UFW-4J-83r" secondAttribute="top" constant="20" id="AB4-V6-IBl"/>
+                                                <constraint firstAttribute="bottom" secondItem="8Th-to-xRf" secondAttribute="bottom" constant="15" id="CCI-Bi-gfV"/>
                                                 <constraint firstItem="8Th-to-xRf" firstAttribute="leading" secondItem="9mC-L8-nKp" secondAttribute="trailing" constant="8" id="Oab-b4-kDr"/>
                                                 <constraint firstAttribute="centerY" secondItem="9mC-L8-nKp" secondAttribute="centerY" id="PRz-oK-7H2"/>
                                                 <constraint firstAttribute="trailing" secondItem="8Th-to-xRf" secondAttribute="trailing" constant="20" id="kBX-Nb-siu"/>

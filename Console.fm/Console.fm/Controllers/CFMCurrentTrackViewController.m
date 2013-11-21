@@ -37,18 +37,17 @@
     [self.pauseButton setHidden:YES];
     [self.playButton setHidden:YES];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidChangeTrack:) name:TDAudioPlayerDidChangeAudioNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidPause:) name:TDAudioPlayerDidPauseNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidPlay:) name:TDAudioPlayerDidPlayNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidStop:) name:TDAudioPlayerDidStopNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidStartPlaying:) name:TDAudioStreamDidStartPlayingNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidChangeTrack:) name:CFMAudioPlayerDidChangeTrackNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidPause:) name:CFMAudioPlayerDidPauseNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidPlay:) name:CFMAudioPlayerDidPlayNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(audioPlayerDidStartPlaying:) name:CFMAudioPlayerDidStartPlayingNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 
-    if (![CFMPlaylist sharedPlaylist].playlist) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"savedPlaylist"]) {
         NSData *playlistData = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedPlaylist"];
         NSNumber *currentTrackIndex = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedTrackIndex"];
 
@@ -65,11 +64,11 @@
 
 - (void)audioPlayerDidChangeTrack:(NSNotification *)notification
 {
-    CFMTrack *track = [CFMPlaylist sharedPlaylist].currentTrack;
+    CFMTrack *track = [CFMAudioPlayer sharedAudioPlayer].currentTrack;
 
-    self.titleLabel.text = track.info.title;
-    self.subtitleLabel.text = track.info.artist;
-    [self.albumImage setImageWithURL:[NSURL URLWithString:track.info.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
+    self.titleLabel.text = track.name;
+    self.subtitleLabel.text = track.artistName;
+    [self.albumImage setImageWithURL:[NSURL URLWithString:track.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
     [self.bufferingIndicator setHidden:NO];
     [self.playButton setHidden:YES];
     [self.pauseButton setHidden:YES];
@@ -77,8 +76,8 @@
     self.elapsedTime = 0;
     self.elapsedPlayTimeLabel.text = @"0:00";
 
-    if ([track.info.duration intValue] != 0) {
-        self.remainingPlayTimeLabel.text = [NSString stringWithFormat:@"-%@", [self stringForSeconds:[track.info.duration unsignedIntegerValue]]];
+    if ([track.duration intValue] != 0) {
+        self.remainingPlayTimeLabel.text = [NSString stringWithFormat:@"-%@", [self stringForSeconds:[track.duration unsignedIntegerValue]]];
     } else {
         self.remainingPlayTimeLabel.text = @"";
     }
@@ -114,19 +113,10 @@
     [self play:nil];
 }
 
-- (void)audioPlayerDidStop:(NSNotification *)notification
-{
-    [self.playButton setHidden:NO];
-    [self.pauseButton setHidden:YES];
-
-    [self.playTimer invalidate];
-    self.playTimer = nil;
-}
-
 - (void)elapseTime
 {
     self.elapsedTime++;
-    NSUInteger duration = [[CFMPlaylist sharedPlaylist].currentTrack.info.duration unsignedIntegerValue];
+    NSUInteger duration = [[CFMPlaylist sharedPlaylist].currentTrack.duration unsignedIntegerValue];
 
     self.elapsedPlayTimeLabel.text = [self stringForSeconds:self.elapsedTime];
 
@@ -144,22 +134,21 @@
 
 - (IBAction)play:(id)sender
 {
-    if ([TDAudioPlayer sharedAudioPlayer].state != TDAudioPlayerStatePaused) {
+    if ([[CFMAudioPlayer sharedAudioPlayer] isLoading]) {
         [self.bufferingIndicator setHidden:NO];
         [self.playButton setHidden:YES];
         [self.pauseButton setHidden:YES];
     } else {
         [self.playButton setHidden:YES];
         [self.pauseButton setHidden:NO];
-        self.playTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(elapseTime) userInfo:nil repeats:YES];
     }
 
-    [[TDAudioPlayer sharedAudioPlayer] play];
+    [[CFMAudioPlayer sharedAudioPlayer] play];
 }
 
 - (IBAction)pause:(id)sender
 {
-    [[TDAudioPlayer sharedAudioPlayer] pause];
+    [[CFMAudioPlayer sharedAudioPlayer] pause];
     [self.playButton setHidden:NO];
     [self.pauseButton setHidden:YES];
 

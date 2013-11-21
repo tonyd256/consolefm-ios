@@ -36,7 +36,7 @@ static NSString *kAPIBaseURL = @"http://console.fm/api/v2/";
             NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
             _apiKey = [private objectForKey:@"Console.fm API Key"];
         } else {
-            _apiKey = @"default key";
+            _apiKey = @"public_limited";
         }
     }
 

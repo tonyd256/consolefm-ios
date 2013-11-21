@@ -21,7 +21,8 @@
 - (CFMTrack *)trackAtIndex:(NSUInteger)index;
 
 - (void)loadTrackAtIndex:(NSUInteger)index;
-
+- (void)playNextTrack;
+- (void)playPreviousTrack;
 - (void)removeAllTracks;
 
 @end

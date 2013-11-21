@@ -7,7 +7,6 @@
 //
 
 #import "CFMMainContainerViewController.h"
-#import "TDAudioInputStreamer.h"
 
 @interface CFMMainContainerViewController ()
 
@@ -29,7 +28,7 @@
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"savedPlaylist"]) {
         self.toolbarContentBottomConstraint.constant = CGRectGetHeight(self.toolbarContent.frame) * -1;
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showToolbarContent) name:TDAudioStreamDidStartPlayingNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showToolbarContent) name:CFMAudioPlayerDidStartPlayingNotification object:nil];
 
         _toolbarIsVisible = NO;
     }

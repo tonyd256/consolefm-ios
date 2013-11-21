@@ -31,7 +31,40 @@
 
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
-    [[TDAudioPlayer sharedAudioPlayer] handleRemoteControlEvent:event];
+    if (event.type != UIEventTypeRemoteControl) return;
+
+    switch (event.subtype) {
+        case UIEventSubtypeRemoteControlPause:
+            [[CFMAudioPlayer sharedAudioPlayer] pause];
+            break;
+
+        case UIEventSubtypeRemoteControlPlay:
+            [[CFMAudioPlayer sharedAudioPlayer] play];
+            break;
+
+        case UIEventSubtypeRemoteControlStop:
+            [[CFMAudioPlayer sharedAudioPlayer] stop];
+            break;
+
+        case UIEventSubtypeRemoteControlTogglePlayPause:
+            if ([[CFMAudioPlayer sharedAudioPlayer] isPlaying]) {
+                [[CFMAudioPlayer sharedAudioPlayer] pause];
+            } else {
+                [[CFMAudioPlayer sharedAudioPlayer] play];
+            }
+            break;
+
+        case UIEventSubtypeRemoteControlNextTrack:
+            [[CFMPlaylist sharedPlaylist] playNextTrack];
+            break;
+
+        case UIEventSubtypeRemoteControlPreviousTrack:
+            [[CFMPlaylist sharedPlaylist] playPreviousTrack];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

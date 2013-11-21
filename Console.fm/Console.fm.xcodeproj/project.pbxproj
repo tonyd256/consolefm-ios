@@ -40,6 +40,7 @@
 		EA54FCFF17ECEE390023FEE0 /* CFMArtistSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FCFE17ECEE390023FEE0 /* CFMArtistSpec.m */; };
 		EA54FD0617ECFE940023FEE0 /* CFMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0117ECEE700023FEE0 /* CFMArtist.m */; };
 		EA54FD0B17ED05A20023FEE0 /* CFMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA54FD0A17ED05A20023FEE0 /* CFMTrack.m */; };
+		EA64D39C183C654600842F02 /* CFMAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA64D39B183C654600842F02 /* CFMAudioPlayer.m */; };
 		EA6AA04B17EF98AC00E469D1 /* private.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA6AA04A17EF98AC00E469D1 /* private.plist */; };
 		EA6AA04F17EF9DAD00E469D1 /* CFMAPIClient+StubExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6AA04E17EF9DAD00E469D1 /* CFMAPIClient+StubExtentions.m */; };
 		EA6AA05217EFA25700E469D1 /* genres.json in Resources */ = {isa = PBXBuildFile; fileRef = EA6AA05117EFA25700E469D1 /* genres.json */; };
@@ -126,6 +127,8 @@
 		EA54FD0A17ED05A20023FEE0 /* CFMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = CFMTrack.m; path = Console.fm/Models/CFMTrack.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EA54FD0C17ED07B40023FEE0 /* CFMTrack+JSONFixture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "CFMTrack+JSONFixture.h"; path = "Console.fmTests/Fixtures/CFMTrack+JSONFixture.h"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EA54FD0D17ED07B40023FEE0 /* CFMTrack+JSONFixture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "CFMTrack+JSONFixture.m"; path = "Console.fmTests/Fixtures/CFMTrack+JSONFixture.m"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		EA64D39A183C654600842F02 /* CFMAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMAudioPlayer.h; sourceTree = "<group>"; };
+		EA64D39B183C654600842F02 /* CFMAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMAudioPlayer.m; sourceTree = "<group>"; };
 		EA6AA04A17EF98AC00E469D1 /* private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = private.plist; path = Console.fm/private.plist; sourceTree = SOURCE_ROOT; };
 		EA6AA04D17EF9DAD00E469D1 /* CFMAPIClient+StubExtentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CFMAPIClient+StubExtentions.h"; path = "Console.fmTests/Stubs/CFMAPIClient+StubExtentions.h"; sourceTree = SOURCE_ROOT; };
 		EA6AA04E17EF9DAD00E469D1 /* CFMAPIClient+StubExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CFMAPIClient+StubExtentions.m"; path = "Console.fmTests/Stubs/CFMAPIClient+StubExtentions.m"; sourceTree = SOURCE_ROOT; };
@@ -384,6 +387,8 @@
 				EA6AA06D17F0C00800E469D1 /* CFMSessionManager.m */,
 				EA3E8922182C388E00BF7DA3 /* CFMPlaylist.h */,
 				EA3E8923182C388E00BF7DA3 /* CFMPlaylist.m */,
+				EA64D39A183C654600842F02 /* CFMAudioPlayer.h */,
+				EA64D39B183C654600842F02 /* CFMAudioPlayer.m */,
 			);
 			name = Helpers;
 			path = Console.fm/Helpers;
@@ -648,6 +653,7 @@
 				EA54FCF817ECE8140023FEE0 /* CFMGenre.m in Sources */,
 				EA7B2E54181EADAE0007A936 /* CFMMainContainerViewController.m in Sources */,
 				EAC092D017F2A3810049579C /* CFMGenreViewController.m in Sources */,
+				EA64D39C183C654600842F02 /* CFMAudioPlayer.m in Sources */,
 				EA3E8924182C388E00BF7DA3 /* CFMPlaylist.m in Sources */,
 				EA6AA06E17F0C00800E469D1 /* CFMSessionManager.m in Sources */,
 				EA54FCA817ECC09B0023FEE0 /* main.m in Sources */,

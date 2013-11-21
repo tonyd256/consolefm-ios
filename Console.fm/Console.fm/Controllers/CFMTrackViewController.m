@@ -49,23 +49,23 @@
     CFMTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CFMTrackCell" forIndexPath:indexPath];
 
     CFMTrack *track = self.tracks[indexPath.row];
-    cell.titleLabel.text = track.info.title;
-    cell.subtitleLabel.text = track.info.artist;
-    [cell.albumArt setImageWithURL:[NSURL URLWithString:track.info.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
+    cell.titleLabel.text = track.name;
+    cell.subtitleLabel.text = track.artistName;
+    [cell.albumArt setImageWithURL:[NSURL URLWithString:track.albumArtSmall] placeholderImage:[UIImage imageNamed:@"Icon"]];
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([TDAudioPlayer sharedAudioPlayer].state == TDAudioPlayerStatePlaying) {
-        [[TDAudioPlayer sharedAudioPlayer] stop];
+    if ([[CFMAudioPlayer sharedAudioPlayer] isPlaying]) {
+        [[CFMAudioPlayer sharedAudioPlayer] stop];
     }
 
     [[CFMPlaylist sharedPlaylist] removeAllTracks];
     [[CFMPlaylist sharedPlaylist] addTracksFromArray:[self.tracks copy]];
     [[CFMPlaylist sharedPlaylist] loadTrackAtIndex:indexPath.row];
-    [[TDAudioPlayer sharedAudioPlayer] play];
+    [[CFMAudioPlayer sharedAudioPlayer] play];
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

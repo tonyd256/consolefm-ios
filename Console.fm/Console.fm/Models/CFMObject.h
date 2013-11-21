@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Simple Casual. All rights reserved.
 //
 
-@interface CFMObject : NSObject
+@interface CFMObject : NSObject <NSCoding>
 
 @property (copy, readonly) NSString *objectID;
 @property (copy, readonly) NSString *name;

@@ -21,4 +21,21 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (!self) return nil;
+
+    _objectID = [aDecoder decodeObjectForKey:@"objectID"];
+    _name = [aDecoder decodeObjectForKey:@"name"];
+
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.objectID forKey:@"objectID"];
+    [aCoder encodeObject:self.name forKey:@"name"];
+}
+
 @end
