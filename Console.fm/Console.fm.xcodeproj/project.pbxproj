@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0224CEC4A07E4C68A98A2384 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3A09629DAB42D6B1D7AC6C /* libPods.a */; };
 		E165ECF9F0464A83BF1D33B2 /* libPods-Console.fmTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EB851E29FF4988BD678EA3 /* libPods-Console.fmTests.a */; };
+		EA10B58A18A482B600018566 /* private.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA10B58918A482B600018566 /* private.plist */; };
+		EA10B58D18A4875500018566 /* CFMColorArtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA10B58C18A4875500018566 /* CFMColorArtViewController.m */; };
 		EA3E8924182C388E00BF7DA3 /* CFMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3E8923182C388E00BF7DA3 /* CFMPlaylist.m */; };
 		EA54FC9C17ECC09B0023FEE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA54FC9B17ECC09B0023FEE0 /* Foundation.framework */; };
 		EA54FC9E17ECC09B0023FEE0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA54FC9D17ECC09B0023FEE0 /* CoreGraphics.framework */; };
@@ -80,6 +82,9 @@
 		5546FC8192D94F8C8B11B0C8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		60EB851E29FF4988BD678EA3 /* libPods-Console.fmTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Console.fmTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3A09629DAB42D6B1D7AC6C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA10B58918A482B600018566 /* private.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = private.plist; path = Console.fm/private.plist; sourceTree = SOURCE_ROOT; };
+		EA10B58B18A4875500018566 /* CFMColorArtViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CFMColorArtViewController.h; path = Console.fm/Controllers/CFMColorArtViewController.h; sourceTree = SOURCE_ROOT; };
+		EA10B58C18A4875500018566 /* CFMColorArtViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CFMColorArtViewController.m; path = Console.fm/Controllers/CFMColorArtViewController.m; sourceTree = SOURCE_ROOT; };
 		EA3E8922182C388E00BF7DA3 /* CFMPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFMPlaylist.h; sourceTree = "<group>"; };
 		EA3E8923182C388E00BF7DA3 /* CFMPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFMPlaylist.m; sourceTree = "<group>"; };
 		EA54FC9817ECC09B0023FEE0 /* Console.fm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Console.fm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +259,7 @@
 				EA54FCA417ECC09B0023FEE0 /* InfoPlist.strings */,
 				EA54FCA717ECC09B0023FEE0 /* main.m */,
 				EA54FCA917ECC09B0023FEE0 /* Console.fm-Prefix.pch */,
+				EA10B58918A482B600018566 /* private.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -426,6 +432,8 @@
 				EA7458311815EA8400582630 /* CFMCurrentTrackViewController.m */,
 				EA7B2E52181EADAE0007A936 /* CFMMainContainerViewController.h */,
 				EA7B2E53181EADAE0007A936 /* CFMMainContainerViewController.m */,
+				EA10B58B18A4875500018566 /* CFMColorArtViewController.h */,
+				EA10B58C18A4875500018566 /* CFMColorArtViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -538,6 +546,7 @@
 				EA54FCE417ECC89D0023FEE0 /* Icon-Small@2x.png in Resources */,
 				EA54FCDF17ECC89D0023FEE0 /* Icon-76.png in Resources */,
 				EA54FCE717ECC89D0023FEE0 /* iTunesArtwork.png in Resources */,
+				EA10B58A18A482B600018566 /* private.plist in Resources */,
 				EA54FCA617ECC09B0023FEE0 /* InfoPlist.strings in Resources */,
 				EA54FCE817ECC89D0023FEE0 /* iTunesArtwork@2x.png in Resources */,
 				EA54FCE017ECC89D0023FEE0 /* Icon-76@2x.png in Resources */,
@@ -646,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA6AA06717F00C0900E469D1 /* CFMAPIClient.m in Sources */,
+				EA10B58D18A4875500018566 /* CFMColorArtViewController.m in Sources */,
 				EAC092D317F2A8150049579C /* CFMTrackViewController.m in Sources */,
 				EA54FD0B17ED05A20023FEE0 /* CFMTrack.m in Sources */,
 				EA7458321815EA8400582630 /* CFMCurrentTrackViewController.m in Sources */,

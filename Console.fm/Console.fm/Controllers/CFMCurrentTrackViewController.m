@@ -10,6 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "CFMTrack.h"
 #import "CFMPlaylist.h"
+#import "CFMColorArtViewController.h"
 
 @interface CFMCurrentTrackViewController ()
 
@@ -59,6 +60,15 @@
             [self.playButton setHidden:NO];
             [self.pauseButton setHidden:YES];
         }
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ColorArtViewSegue"]) {
+        CFMColorArtViewController *controller = [segue destinationViewController];
+        CFMTrack *track = [CFMAudioPlayer sharedAudioPlayer].currentTrack;
+        controller.imageURL = [NSURL URLWithString:track.albumArtLarge];
     }
 }
 

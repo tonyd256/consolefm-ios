@@ -3,6 +3,8 @@ platform :ios, '7.0'
 pod 'AFNetworking', '~>2.0.1'
 pod 'AFNetworking/UIKit'
 pod 'TestFlightSDK', '2.1.1-beta'
+pod 'ColorArt', '~> 0.1.1'
+pod 'BlurryModalSegue'
 
 target 'Console.fmTests', :exclusive => true do
     pod 'Kiwi', '~> 2.2.1'

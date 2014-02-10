@@ -31,13 +31,13 @@ static NSString *kAPIBaseURL = @"http://console.fm/api/v2/";
 - (NSString *)apiKey
 {
     if (!_apiKey) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"private" ofType:@"plist"];
-        if (path) {
-            NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
-            _apiKey = [private objectForKey:@"Console.fm API Key"];
-        } else {
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"private" ofType:@"plist"];
+//        if (path) {
+//            NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
+//            _apiKey = [private objectForKey:@"Console.fm API Key"];
+//        } else {
             _apiKey = @"public_limited";
-        }
+//        }
     }
 
     return _apiKey;

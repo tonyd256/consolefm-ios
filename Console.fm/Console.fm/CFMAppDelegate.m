@@ -13,12 +13,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"private" ofType:@"plist"];
-
-    if (path) {
-        NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
-        [TestFlight takeOff:[private objectForKey:@"TestFlight App Token"]];
-    }
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"private" ofType:@"plist"];
+//
+//    if (path) {
+//        NSDictionary *private = [NSDictionary dictionaryWithContentsOfFile:path];
+//        [TestFlight takeOff:[private objectForKey:@"TestFlight App Token"]];
+//    }
 
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     return YES;
